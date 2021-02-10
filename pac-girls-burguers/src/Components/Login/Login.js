@@ -1,31 +1,12 @@
+
 import React, { useState } from "react";
-import styled from "styled-components";
+import { Input } from "./login-styled";
+import { Button } from "./login-styled";
 
-const Input = styled.input`
-  width: 400px;
-  height: 30px;
-  font-size: 16px;
-  padding: 10px;
-  border: 1 px solid #000;
-  border-radius: 10px;
-  margin: 20px;
-`;
-
-const Button = styled.button`
-  background-color: red;
-  color: white;
-  width: 300px;
-  height: 30px;
-  font-size: 16px;
- 
-  border: 1 px solid #000;
-  border-radius: 10px;
-`;
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -35,7 +16,13 @@ const Login = () => {
 
   const handleButton = (e) => {
       e.preventDefault()
-    alert(email + " - " + password);
+      fetch('https://lab-api-bq.herokuapp.com/auth/', {
+        method: 'POST',
+        headers: { 'accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `email=${email}&password=${password}`})
+        .then((response) => response.json())
+        .then((json) => console.log(json))
   };
 
   return (
@@ -48,7 +35,7 @@ const Login = () => {
       />
       <br />
       <Input
-        type="password"
+        type="password" 
         value={password}
         onChange={handlePassword}
         placeholder="Digite uma Senha"
