@@ -57,7 +57,7 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 - email: ka@ka.com
 - senha: 123456
--
+-(https://sap-005-burger-queen-rust.vercel.app/)
 
 ## Imagens
 
