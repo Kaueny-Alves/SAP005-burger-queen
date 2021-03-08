@@ -79,8 +79,9 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 - React
 - Material-Ui
 
-<h3 align="justify"> Equipe De Desenvolvedoras</h3>
 
-#### Kaueny Alves
+### .Desenvolvido por:
 
-#### Carina Oliveira
+*[Karina](https://github.com/karina1602)
+*[Kaueny Alves](https://github.com/Kaueny-Alves)
+
