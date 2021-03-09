@@ -17,22 +17,28 @@ export const Menu = styled.div`
 
 export const PageBody = styled.div`
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
   flex: 1;
   background-color: #136713;
   overflow-y: auto;
   background-image: url("/assets/bg.png");
 `;
 
-export const Button = styled.button`
+export const Button = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #136713;
-  color: #FFFAFA;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
+  align-items: center;
+  width: 60px;
+  height: 60px;
   border-radius: 10px;
-  width: 50px;
-  outline: none;
- `;
+  margin-bottom: 10px;
+  background-color: #136713;
+  &:hover,
+  &:focus {
+    background-color: #073c07;
+    outline: none;
+  }
+`;
+
  

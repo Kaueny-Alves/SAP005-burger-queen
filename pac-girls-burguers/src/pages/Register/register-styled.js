@@ -4,7 +4,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 100px;
 `;
 
 export const Input = styled.input`
@@ -13,7 +12,7 @@ export const Input = styled.input`
   height: 30px;
   font-size: 16px;
   padding: 10px;
-  border: 1 px solid #000;
+  border: 1 px solid #424242;
   border-radius: 10px;
   margin: 10px;
 `;

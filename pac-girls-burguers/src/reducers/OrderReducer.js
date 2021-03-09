@@ -1,11 +1,9 @@
 const initialState = {
   products: [],
-  // menu: [],
 };
 
 export default (state = initialState, action) => {
   let products = [...state.products];
-  // let menu = [...state.menu];
 
   switch (action.type) {
     case "ADD_PRODUCT":
@@ -21,28 +19,6 @@ export default (state = initialState, action) => {
       }
       console.log(products);
       return { ...state, products };
-
-    // case "ADD_ORDER":
-    //   const addProducts = products.map((item) => {
-    //     return {
-    //       id: item.id,
-    //       qtd: 1,
-    //     };
-    //   });
-
-    //   const qtdProducts = addProducts.reduce((idItem, qtdItem) => {
-    //     idItem[qtdItem.id] = idItem[qtdItem.id] || [];
-    //     idItem[qtdItem.id].push(qtdItem);
-    //     return idItem;
-    //   }, Object.create(null));
-
-    //   for (const [key, value] of Object.entries(qtdProducts)) {
-    //     menu.push({
-    //       id: key,
-    //       qtd: value.length,
-    //     });
-    //   }
-    //   return { ...state, menu };
 
     case "CHANGE_PRODUCT":
       if (products[action.payload.key]) {

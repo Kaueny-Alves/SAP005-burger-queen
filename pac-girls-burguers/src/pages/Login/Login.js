@@ -29,9 +29,9 @@ const Login = () => {
       } else {
         const data = await api.login(body);
         localStorage.setItem("token", data.token);
-        if (data.role === "cozinha") {
+        if (data.role === "kitchen") {
           history.push("/kitchen");
-        } else if (data.role === "salao") {
+        } else if (data.role === "saloon") {
           history.push("/saloon");
         }
         localStorage.setItem("user", JSON.stringify(data));

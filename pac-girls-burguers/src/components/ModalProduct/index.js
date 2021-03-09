@@ -47,10 +47,6 @@ export default ({ data, setStatus }) => {
       payload: { data, qt },
     });
     setStatus(false);
-    // dispatch({
-    //   type: "ADD_ORDER",
-    //   payload: { data },
-    // });
   };
 
   return (
@@ -71,10 +67,12 @@ export default ({ data, setStatus }) => {
               <ProductQtText>{qt}</ProductQtText>
               <ProductQtImage onClick={handlePlusQt} src="/assets/plus.png" />
             </ProductQuantity>
-            <ProductPrice>{Intl.NumberFormat("pt-BR", {
+            <ProductPrice>
+              {Intl.NumberFormat("pt-BR", {
                 style: "currency",
                 currency: "BRL",
-              }).format(data.price * qt)}</ProductPrice>
+              }).format(data.price * qt)}
+            </ProductPrice>
           </ProductsQuantityArea>
         </ProductsInfoArea>
       </ProductsArea>
