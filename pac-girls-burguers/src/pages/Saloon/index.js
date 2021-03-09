@@ -8,7 +8,6 @@ import {
   Input,
   Label,
   ContainerInput,
- 
 } from "./styled";
 import ReactTooltip from "react-tooltip";
 import api from "../../api";
@@ -71,7 +70,6 @@ export default (props) => {
   useEffect(() => {
     const products = async () => {
       const prodItens = await api.getProducts();
-      console.log(prodItens);
       setProductsList(prodItens);
       ReactTooltip.rebuild();
     };
@@ -111,12 +109,13 @@ export default (props) => {
       <ContainerInput>
         <Label>Cliente:</Label>
         <Input
+        type="text"
           placeholder="PacBurguer"
           onChange={onChangeClient}
           value={client}
         />
         <Label>Mesa:</Label>
-        <Input placeholder="09" onChange={onChangeTable} value={table} />
+        <Input  type="number" placeholder="09" onChange={onChangeTable} value={table} />
       </ContainerInput>
 
       <ProductArea>
@@ -126,12 +125,7 @@ export default (props) => {
       </ProductArea>
 
       <Modal status={modalStatus} setStatus={setModalStatus}>
-        <ModalProduct
-          data={modalData}
-          setStatus={setModalStatus}
-          client={client}
-          table={table}
-        />
+        <ModalProduct data={modalData} setStatus={setModalStatus} />
       </Modal>
       <Order client={client} table={table} />
     </Container>

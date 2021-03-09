@@ -82,15 +82,15 @@ const Register = () => {
         <Option disabled value={""}>
           Selecione seu cargo
         </Option>
-        <Option value={"cozinha"}>Cozinha/Chefe</Option>
-        <Option value={"salao"}>Salão/Garçon</Option>
+        <Option value={"kitchen"}>Cozinha | Chefe</Option>
+        <Option value={"saloon"}>Salão | Garçon</Option>
       </Select>
       <br />
       <Input
         type="password"
         value={password}
         onChange={handlePassword}
-        placeholder='Mínimo 6 caracteres'
+        placeholder="Mínimo 6 caracteres"
         required
       />
       <br />

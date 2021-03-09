@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import api from "../../api";
 
@@ -21,16 +22,13 @@ import {
   ProducSend,
 } from "./styled";
 
-export default ({ client, table }) => {
+export default function Order({ client, table }) {
+  const history = useHistory();
   const productsItem = useSelector((state) => state.order.products);
-  //const menu = useSelector((state) => state.order.menu);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(menu);
-  // }, [menu]);
-
+  useEffect(() => {}, [productsItem]);
   const handleOrderClick = () => {
     setShow(!show);
   };
@@ -43,27 +41,24 @@ export default ({ client, table }) => {
   };
 
   const sendOrder = async () => {
-    try {
+    if (client === "" || table === "") {
+      alert("preencha o nome do cliente e a mesa");
+    } else {
       const body = {
         client,
         table,
         products: productsItem.map((item) => ({
           id: Number(item.id),
-          qtd: item.qtd,
+          qtd: item.qt,
         })),
       };
-      if (client === "" || table === "") {
-        alert("preencha o nome do cliente e a mesa");
-      } else {
-        const data = await api.postOrders(body);
-        alert("pedido enviado para cozinha");
-        window.location.href = "/saloon";
-        console.log(data);
-        return data;
-      }
-    } catch (error) {
-      console.log(error);
-      return error;
+      const data = await api.postOrders(body);
+      console.log(data);
+      alert("pedido enviado para cozinha");
+      window.location = "/";
+      //history.push("/saloon")
+
+      return data;
     }
   };
 
@@ -76,6 +71,7 @@ export default ({ client, table }) => {
   return (
     <OrderArea>
       <OrderHeader onClick={handleOrderClick}>
+        <OrderIcon src="/assets/edit.png" />
         <OrderText>Comanda ({productsItem.length})</OrderText>
         {show && <OrderIcon src="/assets/down.png" />}
       </OrderHeader>
@@ -116,6 +112,7 @@ export default ({ client, table }) => {
             </ProductItem>
           ))}
         </ProductsArea>
+        <ProductPrice>{}</ProductPrice>
 
         {productsItem.length > 0 ? (
           <ProducSend
@@ -131,4 +128,4 @@ export default ({ client, table }) => {
       </OrderBody>
     </OrderArea>
   );
-};
+}

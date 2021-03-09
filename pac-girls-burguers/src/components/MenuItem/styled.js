@@ -11,6 +11,6 @@ export const LinkArea = styled.a`
   margin-bottom: 10px;
 `;
 export const LinkIcon = styled.img`
-  width: 34px;
+  width: 100px;
   height: auto;
 `;
