@@ -16,7 +16,7 @@ export const Input = styled.input`
   height: 30px;
   font-size: 16px;
   padding: 10px;
-  border: 1 px solid #424242;
+  border: 1 px solid transparent;
   border-radius: 10px;
   margin: 10px;
 `;
@@ -47,12 +47,12 @@ export const Logo = styled.img`
   height: auto;
 `;
 
-export const Title = styled.h1`
-  color: #fffafa;
+export const Title = styled.h2`
+  color: #ffd700;
 `;
 
 export const P = styled.p`
-color:#FFFAFA;
+ color: #fffafa;
 `;
 
 export const Option = styled.option`

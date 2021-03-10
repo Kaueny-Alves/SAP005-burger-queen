@@ -25,14 +25,14 @@ import { IconButton } from "@material-ui/core";
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
-    right: -3,
+    right: -1,
     top: 13,
     border: `2px solid ${theme.palette.background.paper}`,
-    padding: "0 4px",
+    padding: "10px",
   },
 }))(Badge);
 
-export default (props) => {
+export default function Saloon(props) {
   const [productsList, setProductsList] = useState([]);
   const [modalStatus, setModalStatus] = useState(false);
   const [modalData, setModalData] = useState({});
@@ -40,6 +40,7 @@ export default (props) => {
   const [table, setTable] = useState("");
   const [menu, setMenu] = useState([]);
   const [options, setOptions] = useState("breakfast");
+  const [products, setProducts] = useState([]);
 
   const breakfast =
     productsList.length > 0 &&
@@ -77,8 +78,17 @@ export default (props) => {
           <ProductItem key={index} data={item} onClick={handleProductClick} />
         ));
       default:
+        return "breakfast";
     }
   }
+
+  useEffect(() => {
+    async function readyOrders() {
+      const data = await api.getOrders();
+      setProducts(data.filter(({ status }) => status === "deliver"));
+    }
+    readyOrders();
+  }, []);
 
   useEffect(() => {
     const products = async () => {
@@ -147,7 +157,7 @@ export default (props) => {
       </Modal>
       <OrderReady>
         <IconButton aria-label="waiter">
-          <StyledBadge badgeContent={4} color="secondary">
+          <StyledBadge badgeContent={products.length} color="secondary">
             <MenuItem icon="/assets/waiter.png" link="/orders" />
           </StyledBadge>
         </IconButton>
@@ -155,4 +165,4 @@ export default (props) => {
       <Order client={client} table={table} />
     </Container>
   );
-};
+}

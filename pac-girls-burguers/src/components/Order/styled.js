@@ -70,25 +70,28 @@ export const ProductQtText = styled.div`
   font-weight: bold;
   margin: 0px 5px;
 `;
-export const ProducSend = styled.button`
+export const ProducSend = styled.div`
+display: flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   outline: none;
   background-color: #073c07;
   color: #fffafa;
   font-size: 15px;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 50px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  margin-left: 40px;
-  padding-left: 30px;
-  padding-right: 30px;
+  margin: 20px;
   cursor: pointer;
 `;
 
 export const TotalPrice = styled.div`
-  font-size: 13px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: #fffafa;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
 `;

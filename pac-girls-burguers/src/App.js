@@ -9,9 +9,13 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 
-import ProtectedRoute from "./components/ProtectedRouter/ProtectedRouter";
 
-export default () => {
+import ProtectedRoute from "./components/ProtectedRouter/ProtectedRouter";
+import { HallSaloon } from "./pages/HallSaloon";
+import { OrderPreparing } from "./pages/OrderPreparing";
+import { OrderReady } from "./pages/OrderReady";
+
+export default function App() {
   return (
     <BrowserRouter>
       <Container>
@@ -29,8 +33,17 @@ export default () => {
             <ProtectedRoute exact path="/kitchen">
               <Kitchen />
             </ProtectedRoute>
+            <ProtectedRoute exact path="/preparing">
+              <OrderPreparing />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/ready">
+              <OrderReady />
+            </ProtectedRoute>
             <ProtectedRoute path="/saloon">
               <Saloon />
+            </ProtectedRoute>
+            <ProtectedRoute path="/hall">
+              <HallSaloon />
             </ProtectedRoute>
             <ProtectedRoute path="/orders">
               <OrderKitchen />
@@ -43,4 +56,4 @@ export default () => {
       </Container>
     </BrowserRouter>
   );
-};
+}

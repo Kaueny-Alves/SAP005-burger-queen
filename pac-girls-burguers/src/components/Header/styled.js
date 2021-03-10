@@ -23,6 +23,7 @@ export const Title = styled.h2`
 `;
 
 export const Button = styled.div`
+  cursor: pointer;
   outline: none;
   margin-right: 10px;
 `;
