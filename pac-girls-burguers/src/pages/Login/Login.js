@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../api";
-import { Button, Container, Input, Logo, Title } from "./login-styled";
+import { Button, Container, Input, Logo, Title, P } from "./login-styled";
 
 const Login = () => {
   let history = useHistory();
@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <Container>
       <Logo src="/assets/logo-pac.png" />
-      <Title>ENTRAR</Title>
+      <Title>Login</Title>
       <Input
         type="email"
         value={email}
@@ -58,14 +58,15 @@ const Login = () => {
         onChange={handlePassword}
         placeholder="Digite uma Senha"
       />
-      <br />
-      <p>
-        Ainda não tem conta: <Link to="/register">Registre-se aqui</Link>
-      </p>
+
       <br />
       <Button type="submit" onClick={handleLogin}>
         Entrar
       </Button>
+      <br />
+      <P>
+        Ainda não tem conta: <Link to="/register">Registre-se aqui</Link>
+      </P>
     </Container>
   );
 };

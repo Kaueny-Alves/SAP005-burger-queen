@@ -24,21 +24,3 @@ export const PageBody = styled.div`
   overflow-y: auto;
   background-image: url("/assets/bg.png");
 `;
-
-export const Button = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  background-color: #136713;
-  &:hover,
-  &:focus {
-    background-color: #073c07;
-    outline: none;
-  }
-`;
-
- 

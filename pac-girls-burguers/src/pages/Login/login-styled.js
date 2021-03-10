@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
+  background-color: #136713;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
+  margin-top: 200px;
+  padding: 20px;
 `;
 export const Input = styled.input`
   outline: none;
@@ -27,10 +32,14 @@ export const Button = styled.button`
   padding: 0.8rem 150px;
 `;
 export const Logo = styled.img`
-  width: 400px;
+  width: 300px;
   height: auto;
 `;
 
 export const Title = styled.h1`
-  color: #073c07;
+  color: #fffafa;
+`;
+
+export const P = styled.p`
+color:#FFFAFA;
 `;

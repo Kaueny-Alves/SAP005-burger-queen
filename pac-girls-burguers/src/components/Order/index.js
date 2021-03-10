@@ -55,7 +55,7 @@ export default function Order({ client, table }) {
       const data = await api.postOrders(body);
       console.log(data);
       alert("pedido enviado para cozinha");
-      window.location = "/";
+      window.location = "/saloon";
       //history.push("/saloon")
 
       return data;
