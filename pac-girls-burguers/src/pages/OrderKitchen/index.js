@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../../api";
 import Header from "../../components/Header";
-import {Container,Orders,Cards,CardContainer} from "./styled";
+import {Container,Orders,Cards,CardContainer,Button,H2} from "./styled";
+import MenuItem from "../../components/MenuItem";
 
 export default () => {
   const history = useHistory();
@@ -34,36 +35,36 @@ export default () => {
   }
   return (
     <Container>
-      <Header></Header>
+      <Header> 
+        <MenuItem icon="/assets/back.png" link="/saloon"/>
+        </Header>
       <Orders>
-      <section>
-       < h2>Pedidos Prontos</h2>
        <CardContainer >
+       <H2>Pedidos Prontos</H2>
        {products && products.filter(({status})=>status ==="deliver").map((item,index)=>{
          return(
          <Cards key={index}>
-         <p> Cliente:{item.client_name}</p>
-         <p> Mesa: {item.table}</p>
-         <button onClick={()=>{status(item.id)}}>Entregue</button>
+         <p> <strong>Pedido:</strong>  {item.id}</p>
+         <p> <strong>Cliente:</strong>{" "+item.client_name}</p>
+         <p> <strong>Mesa: </strong>{item.table}</p>
+         <Button onClick={()=>{status(item.id)}}>Entregar</Button>
          </Cards>
          )
        })}
       </CardContainer>
-      </section>
-      <section>
-      <h2>Pedidos Entregues</h2>
       <CardContainer>
+      <H2>Pedidos Entregues</H2>
      {products && products.filter(({status})=>status ==="delivered").map((item,index)=>{
          return(
          <Cards key={index}>
-         <p> Cliente:{item.client_name}</p>
-         <p> Mesa: {item.table}</p>
-         <button onClick={()=>{deleteOrders(item.id)}}>Delete</button>
+          <p> <strong>Pedido:</strong>  {item.id}</p>
+         <p> <strong>Cliente:</strong>{" "+item.client_name}</p>
+         <p> <strong>Mesa: </strong>{item.table}</p>
+         <Button onClick={()=>{deleteOrders(item.id)}}>Delete</Button>
          </Cards>
          )
        })}
        </CardContainer>
-      </section>
       </Orders>
       </Container>
   );

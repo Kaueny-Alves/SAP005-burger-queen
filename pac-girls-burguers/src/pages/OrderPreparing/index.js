@@ -118,7 +118,7 @@ export const OrderPreparing = () => {
                         }}
                         ready={false}
                       >
-                        Pedidos Pronto
+                        Pedido Pronto
                       </ButtonToDo>
                     </ProductType>
                   </ProductInfoArea>
