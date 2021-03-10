@@ -6,7 +6,7 @@ export const OrderArea = styled.div`
   border-top-right-radius: 10px;
   position: fixed;
   bottom: 0;
-  right: 30px;
+  right: 15px;
 `;
 export const OrderHeader = styled.div`
   display: flex;

@@ -60,3 +60,8 @@ export const Option = styled.option`
   font-weight: bold;
 `;
 
+export const OrderReady = styled.div`
+  position: fixed;
+  top: 140px;
+  right: 10px;
+`;

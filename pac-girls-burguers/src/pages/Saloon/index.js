@@ -8,8 +8,8 @@ import {
   Input,
   Label,
   ContainerInput,
+  OrderReady,
 } from "./styled";
-import ReactTooltip from "react-tooltip";
 import api from "../../api";
 
 import Header from "../../components/Header";
@@ -18,6 +18,19 @@ import Modal from "../../components/Modal";
 import ModalProduct from "../../components/ModalProduct";
 import Order from "../../components/Order";
 import Loading from "../../components/Loading";
+import MenuItem from "../../components/MenuItem";
+import Badge from "@material-ui/core/Badge";
+import { withStyles } from "@material-ui/core/styles";
+import { IconButton } from "@material-ui/core";
+
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}))(Badge);
 
 export default (props) => {
   const [productsList, setProductsList] = useState([]);
@@ -71,7 +84,6 @@ export default (props) => {
     const products = async () => {
       const prodItens = await api.getProducts();
       setProductsList(prodItens);
-      ReactTooltip.rebuild();
     };
 
     products();
@@ -92,7 +104,8 @@ export default (props) => {
 
   return (
     <Container>
-      <Header></Header>
+      <Header />
+
       <Label>Categorias:</Label>
       <Select
         value={options}
@@ -109,13 +122,18 @@ export default (props) => {
       <ContainerInput>
         <Label>Cliente:</Label>
         <Input
-        type="text"
+          type="text"
           placeholder="PacBurguer"
           onChange={onChangeClient}
           value={client}
         />
         <Label>Mesa:</Label>
-        <Input  type="number" placeholder="09" onChange={onChangeTable} value={table} />
+        <Input
+          type="number"
+          placeholder="09"
+          onChange={onChangeTable}
+          value={table}
+        />
       </ContainerInput>
 
       <ProductArea>
@@ -127,6 +145,13 @@ export default (props) => {
       <Modal status={modalStatus} setStatus={setModalStatus}>
         <ModalProduct data={modalData} setStatus={setModalStatus} />
       </Modal>
+      <OrderReady>
+        <IconButton aria-label="waiter">
+          <StyledBadge badgeContent={4} color="secondary">
+            <MenuItem icon="/assets/waiter.png" link="/orders" />
+          </StyledBadge>
+        </IconButton>
+      </OrderReady>
       <Order client={client} table={table} />
     </Container>
   );

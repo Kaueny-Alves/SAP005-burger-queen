@@ -34,12 +34,13 @@ export const Option = styled.option`
 
 export const Titulo = styled.div`
   color: #fffafa;
-  background-color: #073c07;
+  background-color: #136713;
   height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
+  padding: 10px;
 `;
 
 export const ContainerProduct = styled.div`
@@ -78,3 +79,5 @@ export const ButtonToDo = styled.button`
   /* background-color: ${(props) => (props.ready ? "red" : "orange")}; */
   margin: 10px 0px;
 `;
+
+

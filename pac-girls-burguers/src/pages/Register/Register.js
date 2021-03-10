@@ -8,6 +8,7 @@ import {
   Logo,
   Title,
   Option,
+  P
 } from "./register-styled";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../api";
@@ -98,9 +99,9 @@ const Register = () => {
         Cadastrar
       </Button>
 
-      <p>
+      <P>
         Já tem cadastro: <Link to="/login">Entre aqui</Link>
-      </p>
+      </P>
     </Container>
   );
 };

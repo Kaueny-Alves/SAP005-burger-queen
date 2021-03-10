@@ -26,6 +26,8 @@ import {
   Typography,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import MenuItem from "../../components/MenuItem";
+import ReactTooltip from "react-tooltip";
 
 export default function Kitchen() {
   const [pending, setPending] = useState([]);
@@ -66,7 +68,10 @@ export default function Kitchen() {
 
   return (
     <Container>
-      <Header />
+      <Header>
+        <MenuItem icon="/assets/preparing1.png" link="/preparing" />
+        <MenuItem icon="/assets/ready1.png" link="/ready" />
+      </Header>
       <ProductArea>
         <ProductList>
           <Titulo> PEDIDOS PENDENTES</Titulo>
@@ -247,6 +252,7 @@ export default function Kitchen() {
           )}
         </ProductList>
       </ProductArea>
+      <ReactTooltip id="tip-top" place="top" effect="solid" />
     </Container>
   );
 }

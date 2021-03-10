@@ -4,13 +4,25 @@ export const Container = styled.div`
   background-color: #136713;
   border-radius: 10px;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Logo = styled.img`
   width: auto;
   height: 80px;
 `;
-export const Title = styled.h1`
-  color: yellowgreen;
+
+export const Div = styled.div`
+  width: 60%;
+  display: flex;
+  align-items: center;
+`;
+export const Title = styled.h2`
+  color: #ffd700;
+`;
+
+export const Button = styled.div`
+  outline: none;
+  margin-right: 10px;
 `;

@@ -2,7 +2,7 @@ import React from "react";
 import { LinkArea, LinkIcon } from "./styled";
 import { useHistory, useLocation } from "react-router-dom";
 
-export default ({ icon, link, title }) => {
+export default ({ icon, link }) => {
   const history = useHistory();
   const location = useLocation();
 
@@ -14,8 +14,6 @@ export default ({ icon, link, title }) => {
   };
   return (
     <LinkArea
-      data-tip={title}
-      data-for="tip-right"
       active={isActive}
       href={link}
       onClick={handleClick}
