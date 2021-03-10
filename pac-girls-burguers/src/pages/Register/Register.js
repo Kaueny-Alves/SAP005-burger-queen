@@ -61,13 +61,13 @@ const Register = () => {
   return (
     <Container>
       <Logo src="/assets/logo-pac.png" />
-      <Title>CADASTRO</Title>
+      <Title>Cadastre-se no Pac Burguers</Title>
 
       <Input
         type="text"
         value={name}
         onChange={handleName}
-        placeholder="Digite seu Nome"
+        placeholder="Nome"
         required
       />
       <br />
@@ -75,7 +75,7 @@ const Register = () => {
         type="email"
         value={email}
         onChange={handleEmail}
-        placeholder="Digite um Email"
+        placeholder="Email"
         required
       />
       <br />
@@ -91,7 +91,7 @@ const Register = () => {
         type="password"
         value={password}
         onChange={handlePassword}
-        placeholder="Mínimo 6 caracteres"
+        placeholder="Senha mínimo 6 caracteres"
         required
       />
       <br />

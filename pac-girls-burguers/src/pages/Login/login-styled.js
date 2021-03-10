@@ -36,10 +36,11 @@ export const Logo = styled.img`
   height: auto;
 `;
 
-export const Title = styled.h1`
-  color: #fffafa;
+export const Title = styled.h2`
+  color: #ffd700;
 `;
 
+
 export const P = styled.p`
-color:#FFFAFA;
+ color: #fffafa;
 `;

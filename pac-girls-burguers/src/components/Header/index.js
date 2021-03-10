@@ -11,7 +11,7 @@ export default ({ children }) => {
     <Container>
       <Div>
         <Logo src="/assets/logo-pac.png" />
-        <Title>PAC BURGUER</Title>
+        <Title>PAC BURGUERS</Title>
       </Div>
       {children}
       <Button onClick={handleLogout}>

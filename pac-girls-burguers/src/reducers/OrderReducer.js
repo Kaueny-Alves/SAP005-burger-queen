@@ -28,7 +28,7 @@ export default (state = initialState, action) => {
 
             if (products[action.payload.key].qt <= 0) {
               products = products.filter(
-                (item, index) => index !== action.payload.key
+                (_, index) => index !== action.payload.key
               );
             }
             break;

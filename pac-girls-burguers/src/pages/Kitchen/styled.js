@@ -6,10 +6,11 @@ export const Container = styled.div`
 `;
 
 export const ProductArea = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   gap: 10px;
 `;
 export const ProductList = styled.div`
@@ -18,29 +19,17 @@ export const ProductList = styled.div`
   gap: 10px;
 `;
 
-export const Select = styled.select`
-  width: 430px;
-  height: 50px;
-  font-size: 16px;
-  border: 2 px solid #000;
-  border-radius: 10px;
-  margin: 10px;
-`;
-
-export const Option = styled.option`
-  font-size: 16px;
-  font-weight: bold;
-`;
-
 export const Titulo = styled.div`
+  width: 400px;
   color: #fffafa;
   background-color: #136713;
   height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 25px;
   padding: 10px;
+  border-radius: 10px;
 `;
 
 export const ContainerProduct = styled.div`
@@ -59,25 +48,33 @@ export const ProductInfoArea = styled.div`
   margin-right: 10px;
 `;
 
-export const ProductName = styled.div`
+export const ProductName = styled.p`
   font-size: 16px;
-  font-weight: bold;
 `;
 
 export const ProductType = styled.div``;
-export const ProductItem = styled.div``;
-export const ClientName = styled.div`
-  font-size: 14px;
-  font-weight: bold;
+export const ProductItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: #136713;
 `;
-export const ProductQuantity = styled.div``;
-export const Table = styled.div``;
-export const Status = styled.div``;
-export const Waiter = styled.div``;
-export const ButtonToDo = styled.button`
-  /* color: #fffafa; */
-  /* background-color: ${(props) => (props.ready ? "red" : "orange")}; */
-  margin: 10px 0px;
+export const ClientName = styled.p``;
+export const ProductQuantity = styled.p``;
+export const Table = styled.p``;
+export const Status = styled.p`
+  color: red;
 `;
-
-
+export const Waiter = styled.p``;
+export const Id = styled.p``;
+export const ButtonToDo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fffafa;
+  background-color: #136713;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+`;

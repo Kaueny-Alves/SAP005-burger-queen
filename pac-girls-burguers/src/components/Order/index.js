@@ -20,6 +20,7 @@ import {
   ProductQtIcon,
   ProductQtText,
   ProducSend,
+  TotalPrice
 } from "./styled";
 
 export default function Order({ client, table }) {
@@ -55,8 +56,8 @@ export default function Order({ client, table }) {
       const data = await api.postOrders(body);
       console.log(data);
       alert("pedido enviado para cozinha");
-      window.location = "/saloon";
-      //history.push("/saloon")
+
+      history.push("/hall");
 
       return data;
     }
@@ -112,7 +113,17 @@ export default function Order({ client, table }) {
             </ProductItem>
           ))}
         </ProductsArea>
-        <ProductPrice>{}</ProductPrice>
+        <TotalPrice>
+          Total: R$
+          {productsItem
+            .reduce(
+              (accumulator, currentValue) =>
+                accumulator +
+                Number(currentValue.price) * Number(currentValue.qt),
+              0
+            )
+            .toFixed(2)}
+        </TotalPrice>
 
         {productsItem.length > 0 ? (
           <ProducSend

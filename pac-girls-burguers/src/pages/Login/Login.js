@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../api";
-import { Button, Container, Input, Logo, Title, P } from "./login-styled";
+import { Button, Container, Input, Logo, Title,  P } from "./login-styled";
 
 const Login = () => {
   let history = useHistory();
@@ -44,19 +44,21 @@ const Login = () => {
   return (
     <Container>
       <Logo src="/assets/logo-pac.png" />
-      <Title>Login</Title>
+
+      <Title>Entre no Pac Burguers</Title>
+
       <Input
         type="email"
         value={email}
         onChange={handleEmail}
-        placeholder="Digite um Email"
+        placeholder="Email"
       />
       <br />
       <Input
         type="password"
         value={password}
         onChange={handlePassword}
-        placeholder="Digite uma Senha"
+        placeholder="Senha"
       />
 
       <br />
