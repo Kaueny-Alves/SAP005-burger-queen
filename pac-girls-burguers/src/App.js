@@ -3,17 +3,18 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Saloon from "./pages/Saloon";
 import Kitchen from "./pages/Kitchen";
 import { Container, PageBody } from "./AppStyled";
-import OrderKitchen from "./pages/OrderKitchen";
+
 import Profile from "./pages/Profile";
 
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 
-
 import ProtectedRoute from "./components/ProtectedRouter/ProtectedRouter";
 import { HallSaloon } from "./pages/HallSaloon";
 import { OrderPreparing } from "./pages/OrderPreparing";
 import { OrderReady } from "./pages/OrderReady";
+import OrderDelivered from "./pages/OrderDelivered";
+import OrderSaloon from "./pages/OrderSaloon";
 
 export default function App() {
   return (
@@ -39,6 +40,9 @@ export default function App() {
             <ProtectedRoute exact path="/ready">
               <OrderReady />
             </ProtectedRoute>
+            <ProtectedRoute exact path="/delivered">
+              <OrderDelivered />
+            </ProtectedRoute>
             <ProtectedRoute path="/saloon">
               <Saloon />
             </ProtectedRoute>
@@ -46,7 +50,7 @@ export default function App() {
               <HallSaloon />
             </ProtectedRoute>
             <ProtectedRoute path="/orders">
-              <OrderKitchen />
+              <OrderSaloon />
             </ProtectedRoute>
             <ProtectedRoute path="/profile">
               <Profile />
