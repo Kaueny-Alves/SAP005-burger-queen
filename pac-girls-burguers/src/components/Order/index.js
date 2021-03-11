@@ -20,16 +20,19 @@ import {
   ProductQtIcon,
   ProductQtText,
   ProducSend,
-  TotalPrice
+  TotalPrice,
 } from "./styled";
+import { Modal } from "@material-ui/core";
 
 export default function Order({ client, table }) {
-  const history = useHistory();
   const productsItem = useSelector((state) => state.order.products);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const [products, setProducts] = useState([]);
 
-  useEffect(() => {}, [productsItem]);
+  useEffect(() => {
+    setProducts(productsItem);
+  }, [productsItem]);
   const handleOrderClick = () => {
     setShow(!show);
   };
@@ -48,37 +51,37 @@ export default function Order({ client, table }) {
       const body = {
         client,
         table,
-        products: productsItem.map((item) => ({
+        products: products.map((item) => ({
           id: Number(item.id),
           qtd: item.qt,
         })),
       };
       const data = await api.postOrders(body);
       console.log(data);
-      alert("pedido enviado para cozinha");
+      alert("pedido enviado para cozinha")
 
-      history.push("/hall");
+      window.location.href = "/hall";
 
       return data;
     }
   };
 
   useEffect(() => {
-    if (productsItem.length === 0) {
+    if (products.length === 0) {
       setShow(false);
     }
-  }, [productsItem.length]);
+  }, [products.length]);
 
   return (
     <OrderArea>
       <OrderHeader onClick={handleOrderClick}>
         <OrderIcon src="/assets/edit.png" />
-        <OrderText>Comanda ({productsItem.length})</OrderText>
+        <OrderText>Comanda ({products.length})</OrderText>
         {show && <OrderIcon src="/assets/down.png" />}
       </OrderHeader>
       <OrderBody show={show}>
         <ProductsArea>
-          {productsItem.map((item, index) => (
+          {products.map((item, index) => (
             <ProductItem key={index}>
               <ProductPhoto src={item.image}></ProductPhoto>
               <ProductInfoArea>
@@ -115,7 +118,7 @@ export default function Order({ client, table }) {
         </ProductsArea>
         <TotalPrice>
           Total: R$
-          {productsItem
+          {products
             .reduce(
               (accumulator, currentValue) =>
                 accumulator +
@@ -125,7 +128,7 @@ export default function Order({ client, table }) {
             .toFixed(2)}
         </TotalPrice>
 
-        {productsItem.length > 0 ? (
+        {products.length > 0 ? (
           <ProducSend
             onClick={() => {
               sendOrder();

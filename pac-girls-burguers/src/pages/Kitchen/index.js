@@ -16,7 +16,7 @@ import {
   Status,
   Waiter,
   ButtonToDo,
-  Id
+  Id,
 } from "./styled";
 import Header from "../../components/Header";
 import Loading from "../../components/Loading";
@@ -35,7 +35,8 @@ export default function Kitchen() {
   useEffect(() => {
     async function getOrder() {
       const orders = await api.getOrders();
-      const pending = orders.filter(({ status }) => status === "pending");
+      const pending =
+        orders && orders.filter(({ status }) => status === "pending");
       setPending(pending);
       console.log(orders);
     }
