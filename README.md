@@ -3,9 +3,7 @@
 
 > Status do Projeto: Em desenvolvimento :warning:
 
-
-
-
+![logo-pac](https://user-images.githubusercontent.com/63555634/110978298-f915cb00-8341-11eb-913b-0737cc0819fa.png)
 
 
 <p align="justify"> Esse é um projeto de Frontend Web feito no curso de Desenvolvimento Front End da Laboratória. 
@@ -105,6 +103,6 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 ### .Desenvolvido por:
 
-* - Carina - [Carina](https://github.com/karina1602)
+* Carina - [Carina](https://github.com/karina1602)
 * Kaueny - [Kaueny Alves](https://github.com/Kaueny-Alves)
 
