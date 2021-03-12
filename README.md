@@ -3,6 +3,11 @@
 
 > Status do Projeto: Em desenvolvimento :warning:
 
+
+
+
+
+
 <p align="justify"> Esse é um projeto de Frontend Web feito no curso de Desenvolvimento Front End da Laboratória. 
 Um pequeno restaurante de hambúrgueres, que está crescendo, necessita uma interface em que se possa realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
 O objetivo principal é aprender a construir uma interface web usando React. Esse framework front-end ataca o seguinte problema: como manter a interface e estado sincronizados. Portanto, esta experiência espera familiarizá-la com o conceito de estado da tela, e como cada mudança no estado vai refletir na interface (por exemplo, toda vez que adicionamos um produto para um pedido, a interface deve atualizar a lista de pedidos e o total).
@@ -61,7 +66,7 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 - email: salao@pac.com
 - senha: 123456
 
-* usuário do salao 
+* usuário da cozinha 
 - email: cozinha@pac.com
 - senha: 123456
 
@@ -69,7 +74,8 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 ## Imagens
 <div>
 
-<img width="200" alt="Captura de Tela 2021-03-12 às 14 38 30" src="https://user-images.githubusercontent.com/63555634/110977743-46456d00-8341-11eb-9549-fd30991b592c.png">
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 46 11" src="https://user-images.githubusercontent.com/63555634/110978127-c1a71e80-8341-11eb-90af-826093d7a06b.png">
+
 
 <img width="200" alt="Captura de Tela 2021-03-12 às 14 43 06" src="https://user-images.githubusercontent.com/63555634/110977778-50676b80-8341-11eb-8996-714ccd1e7343.png">
 
