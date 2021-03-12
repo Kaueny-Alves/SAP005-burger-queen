@@ -2,7 +2,7 @@ const initialState = {
   products: [],
 };
 
-export default (state = initialState, action) => {
+export default function OrderReducer(state = initialState, action) {
   let products = [...state.products];
 
   switch (action.type) {
@@ -37,13 +37,12 @@ export default (state = initialState, action) => {
 
             break;
           default:
-            break;
+            return "ADD_PRODUCT";
         }
       }
       return { ...state, products };
 
     default:
-      break;
+      return state;
   }
-  return state;
-};
+}
