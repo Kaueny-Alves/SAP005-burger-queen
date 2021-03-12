@@ -37,27 +37,34 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 - Login
 - Cadastro
-- Usuário é redirecionado para a tela respectiva ao seu role
+- Usuário é redirecionado para a tela respectiva ao seu cadastro
 - Página para usuário do salão
 - Adicionar produtos na comanda
 - Enviador pedido para cozinha
 - Excluir itens da comanda
 - Filtrar categorias de produtos
+- Tela para usuário da cozinha
+- Usuário do salão ver pedidos que estão prontos
 
 
 ## O que não funciona
 
 - ¯\\\_(ツ)\_/¯
 
-- Tela para usuário da cozinha
-- Usuário do salão ver pedidos que estão prontos
 
 
-## Link
 
-- email: ka@ka.com
+## Link do projeto
+- Pac Burguer - [link](https://pac-burguers.vercel.app/)
+
+* usuário do salao 
+- email: salao@pac.com
 - senha: 123456
-- [link](https://sap-005-burger-queen-rust.vercel.app/)
+
+* usuário do salao 
+- email: cozinha@pac.com
+- senha: 123456
+
 
 ## Imagens
 
@@ -78,10 +85,12 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 - React
 - Material-Ui
+- Styled components
+- React router dom
 
 
 ### .Desenvolvido por:
 
-*[Karina](https://github.com/karina1602)
-*[Kaueny Alves](https://github.com/Kaueny-Alves)
+* - Carina - [Carina](https://github.com/karina1602)
+* Kaueny - [Kaueny Alves](https://github.com/Kaueny-Alves)
 
