@@ -67,18 +67,26 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 
 ## Imagens
+<div>
 
-<img width="200" alt="Captura de Tela 2021-03-05 às 17 54 34" src="https://user-images.githubusercontent.com/63555634/110172513-067c0400-7ddc-11eb-9b85-731d6e40059f.png">
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 38 30" src="https://user-images.githubusercontent.com/63555634/110977743-46456d00-8341-11eb-9549-fd30991b592c.png">
 
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 43 06" src="https://user-images.githubusercontent.com/63555634/110977778-50676b80-8341-11eb-8996-714ccd1e7343.png">
 
-<img width="200" alt="Captura de Tela 2021-03-05 às 17 54 22" src="https://user-images.githubusercontent.com/63555634/110172524-0aa82180-7ddc-11eb-8791-5960215b930f.png">
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 41 51" src="https://user-images.githubusercontent.com/63555634/110977803-5bba9700-8341-11eb-8b79-77a5a894fa36.png">
 
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 40 05" src="https://user-images.githubusercontent.com/63555634/110977848-65dc9580-8341-11eb-8916-4a8410c987f5.png">
 
-<img width="200" alt="Captura de Tela 2021-03-05 às 17 54 59" src="https://user-images.githubusercontent.com/63555634/110172538-0f6cd580-7ddc-11eb-9263-b4f114e2172b.png">
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 42 08" src="https://user-images.githubusercontent.com/63555634/110977883-70972a80-8341-11eb-8ebe-d0903b382024.png">
 
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 42 21" src="https://user-images.githubusercontent.com/63555634/110977893-73921b00-8341-11eb-9f79-d56509c0e496.png">
 
-<img width="200" alt="Captura de Tela 2021-03-05 às 17 55 23" src="https://user-images.githubusercontent.com/63555634/110172566-1562b680-7ddc-11eb-8651-4cbd7ca8ad9b.png">
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 40 39" src="https://user-images.githubusercontent.com/63555634/110977910-7856cf00-8341-11eb-80c8-67209dede64e.png">
 
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 40 59" src="https://user-images.githubusercontent.com/63555634/110977918-7ab92900-8341-11eb-8fcc-3433fc4486a7.png">
+
+<img width="200" alt="Captura de Tela 2021-03-12 às 14 41 19" src="https://user-images.githubusercontent.com/63555634/110977922-7c82ec80-8341-11eb-9542-0e57724b3438.png">
+</div>
 
 
 <h3 align="justify"> Tecnologia Usada no projeto</h3>
