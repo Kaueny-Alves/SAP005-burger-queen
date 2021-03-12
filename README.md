@@ -1,9 +1,11 @@
-
+<div>
+<img width="57" alt="Captura de Tela 2021-03-12 às 14 50 20" src="https://user-images.githubusercontent.com/63555634/110978560-4abe5580-8342-11eb-804d-1e7e7641d54a.png">
 <h1 align="justify"> PAC BURGUER</h1>
+</div>
 
 > Status do Projeto: Em desenvolvimento :warning:
 
-![logo-pac](https://user-images.githubusercontent.com/63555634/110978298-f915cb00-8341-11eb-913b-0737cc0819fa.png)
+
 
 
 <p align="justify"> Esse é um projeto de Frontend Web feito no curso de Desenvolvimento Front End da Laboratória. 
