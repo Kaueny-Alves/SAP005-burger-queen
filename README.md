@@ -1,11 +1,9 @@
 
 
-<h1 align="justify"><img width="57" alt="Captura de Tela 2021-03-12 às 14 50 20" src="https://user-images.githubusercontent.com/63555634/110978560-4abe5580-8342-11eb-804d-1e7e7641d54a.png"> PAC BURGUER</h1>
+<h1 align="justify"> PAC BURGUER</h1>
 
 
 > Status do Projeto: Em desenvolvimento :warning:
-
-
 
 
 <p align="justify"> Esse é um projeto de Frontend Web feito no curso de Desenvolvimento Front End da Laboratória. 
@@ -50,17 +48,22 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 - Filtrar categorias de produtos
 - Tela para usuário da cozinha
 - Usuário do salão ver pedidos que estão prontos
+- Logout
 
 
 ## O que não funciona
 
 - ¯\\\_(ツ)\_/¯
 
+- O retorno de erros no login e no cadastro. 
+
+
+
 
 
 
 ## Link do projeto
-- Pac Burguer - [link](https://pac-burguers.vercel.app/)
+* Pac Burguer - [link](https://pac-burguers.vercel.app/)
 
 * usuário do salao 
 - email: salao@pac.com
@@ -105,6 +108,6 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 ### .Desenvolvido por:
 
-* Carina - [Carina](https://github.com/karina1602)
-* Kaueny - [Kaueny Alves](https://github.com/Kaueny-Alves)
+*  [Carina](https://github.com/karina1602)
+*  [Kaueny Alves](https://github.com/Kaueny-Alves)
 
