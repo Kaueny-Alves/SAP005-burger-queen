@@ -46,7 +46,7 @@ export default function Kitchen() {
   async function putPreparing(orderId) {
     const body = { status: "preparing" };
     const orders = await api.putOrdersId(orderId, body);
-    window.location = "/kitchen";
+    window.location = "/kitchen"
     console.log(orders);
   }
 

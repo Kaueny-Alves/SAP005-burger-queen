@@ -45,7 +45,7 @@ export const OrderPreparing = () => {
   async function putReady(orderId) {
     const body = { status: "ready" };
     const orders = await api.putOrdersId(orderId, body);
-    window.location = "/preparing";
+    window.location = "/preparing"
     console.log(orders);
   }
 
