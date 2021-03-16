@@ -108,6 +108,6 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 ### .Desenvolvido por:
 
-*  [Carina](https://github.com/karina1602)
+*  [Carina Oliveira](https://github.com/karina1602)
 *  [Kaueny Alves](https://github.com/Kaueny-Alves)
 
