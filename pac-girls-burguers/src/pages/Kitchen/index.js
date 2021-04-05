@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import api from "../../api";
+import {api} from "../../api";
+
 import {
   Container,
   ProductArea,
@@ -38,7 +39,6 @@ export default function Kitchen() {
       const pending =
         orders && orders.filter(({ status }) => status === "pending");
       setPending(pending);
-      console.log(orders);
     }
     getOrder();
   }, []);

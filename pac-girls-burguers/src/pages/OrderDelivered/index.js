@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import api from "../../api";
+import {api} from "../../api";
+
 import Header from "../../components/Header";
 import { Container, Orders, Cards, CardContainer, Button, H2 } from "./styled";
 import MenuItem from "../../components/MenuItem";

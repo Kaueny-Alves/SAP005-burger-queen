@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import api from "../../api";
+import { api } from "../../api";
 
 import {
   OrderArea,
@@ -19,10 +18,8 @@ import {
   ProductQuantityArea,
   ProductQtIcon,
   ProductQtText,
-  ProducSend,
   TotalPrice,
 } from "./styled";
-import { Modal } from "@material-ui/core";
 
 export default function Order({ client, table }) {
   const productsItem = useSelector((state) => state.order.products);
@@ -58,7 +55,7 @@ export default function Order({ client, table }) {
       };
       const data = await api.postOrders(body);
       console.log(data);
-      alert("pedido enviado para cozinha")
+      alert("pedido enviado para cozinha");
 
       window.location.href = "/hall";
 
@@ -128,7 +125,7 @@ export default function Order({ client, table }) {
             .toFixed(2)}
         </TotalPrice>
 
-        {products.length > 0 ? (
+        {/* {products.length > 0 ? (
           <ProducSend
             onClick={() => {
               sendOrder();
@@ -138,7 +135,7 @@ export default function Order({ client, table }) {
           </ProducSend>
         ) : (
           <></>
-        )}
+        )} */}
       </OrderBody>
     </OrderArea>
   );
