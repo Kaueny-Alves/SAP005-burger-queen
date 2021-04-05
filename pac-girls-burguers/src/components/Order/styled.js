@@ -80,7 +80,7 @@ export const ProducSend = styled.div`
   color: #fffafa;
   font-size: 15px;
   font-weight: bold;
-  padding: 10px;
+  padding: 15px;
   border-radius: 50px;
   margin: 20px;
   cursor: pointer;

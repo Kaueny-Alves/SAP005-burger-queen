@@ -8,7 +8,6 @@ import {
   Input,
   Label,
   ContainerInput,
-  OrderReady,
 } from "./styled";
 import { api } from "../../api";
 
