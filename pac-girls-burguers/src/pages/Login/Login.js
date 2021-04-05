@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import api from "../../api";
-import { Button, Container, Input, Logo, Title,  P } from "./login-styled";
+import { api } from "../../api";
+import { Button, Container, Input, Logo, Title, P } from "./login-styled";
 
 const Login = () => {
   let history = useHistory();
@@ -19,28 +19,21 @@ const Login = () => {
   async function handleLogin(e) {
     e.preventDefault();
 
-    try {
-      const body = {
-        email,
-        password,
-      };
-      if (email === "" || password === "") {
-        alert("preencha com um email e uma senha");
-      } else {
-        const data = await api.login(body);
-        localStorage.setItem("token", data.token);
-        if (data.role === "kitchen") {
-          history.push("/kitchen");
-        } else if (data.role === "saloon") {
-          history.push("/saloon");
-        }
-        localStorage.setItem("user", JSON.stringify(data));
-        console.log(data);
-      }
-    } catch (error) {
-    
-      console.log(error);
+    if (email === "" || password === "") {
+      alert("preencha com um email e uma senha");
     }
+    const body = {
+      email,
+      password,
+    };
+    const data = await api.login(body);
+    localStorage.setItem("token", data.token);
+    if (data.role === "kitchen") {
+      history.push("/kitchen");
+    } else if (data.role === "saloon") {
+      history.push("/saloon");
+    }
+    localStorage.setItem("user", JSON.stringify(data));
   }
   return (
     <Container>

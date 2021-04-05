@@ -8,10 +8,10 @@ import {
   Logo,
   Title,
   Option,
-  P
+  P,
 } from "./register-styled";
 import { Link, useHistory } from "react-router-dom";
-import api from "../../api";
+import { api } from "../../api";
 
 const Register = () => {
   let history = useHistory();
@@ -38,24 +38,25 @@ const Register = () => {
   async function handleButton(e) {
     e.preventDefault();
     try {
-      const body = {
-        email,
-        password,
-        role,
-        restaurant: "PacBurguer",
-        name,
-      };
       if (email === "" || password === "" || role === "" || name === "") {
         alert("Por favor, preencha todos os campos");
       } else {
-        const data = await api.register(body);
-        alert("Usuário cadastrado com sucesso");
-        console.log(data);
+        const body = {
+          email,
+          password,
+          role,
+          restaurant: "PacBurguer",
+          name,
+        };
+        await api.register(body);
+        alert("dados cadastrado com sucesso");
         history.push("/login");
       }
+
     } catch (error) {
-      console.log(error);
+
     }
+
   }
 
   return (

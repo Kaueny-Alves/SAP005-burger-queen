@@ -18,6 +18,7 @@ export const CategoryList = styled.div`
 export const ProductArea = styled.div`
   margin-top: 20px;
   margin-bottom: 10px;
+  height: 100vh;
 `;
 export const ProductList = styled.div`
   display: grid;
@@ -26,22 +27,23 @@ export const ProductList = styled.div`
 `;
 export const Input = styled.input`
   outline: none;
-  width: 200px;
+  width: 150px;
   height: 20px;
   font-size: 16px;
   padding: 10px;
-  border: 1 px solid #000;
+  border: 1 px solid #073c07;
   border-radius: 10px;
   margin: 10px;
+  color: #073c07;
 `;
 
 export const Label = styled.label`
   color: #fffafa;
+  font-size: 20px;
 `;
 
 export const ContainerInput = styled.div`
   display: flex;
-
   align-items: center;
   padding: 20px 0px;
 `;
@@ -50,18 +52,14 @@ export const Select = styled.select`
   width: 430px;
   height: 50px;
   font-size: 16px;
-  border: 2 px solid #424242;
+  border: 1px solid #073c07;
   border-radius: 10px;
   margin: 10px;
+  color: #073c07;
 `;
 
 export const Option = styled.option`
   font-size: 16px;
   font-weight: bold;
-`;
-
-export const OrderReady = styled.div`
-  position: fixed;
-  top: 140px;
-  right: 10px;
+  color: #073c07;
 `;

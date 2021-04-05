@@ -10,7 +10,7 @@ import {
   ContainerInput,
   OrderReady,
 } from "./styled";
-import api from "../../api";
+import { api } from "../../api";
 
 import Header from "../../components/Header";
 import ProductItem from "../../components/ProductItem";
@@ -22,17 +22,20 @@ import MenuItem from "../../components/MenuItem";
 import Badge from "@material-ui/core/Badge";
 import { withStyles } from "@material-ui/core/styles";
 import { IconButton } from "@material-ui/core";
+import { ProducSend } from "../../components/Order/styled";
+import { useSelector } from "react-redux";
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
-    right: -1,
-    top: 13,
+    right: 10,
+    top: 30,
     border: `2px solid ${theme.palette.background.paper}`,
     padding: "10px",
   },
 }))(Badge);
 
 export default function Saloon(props) {
+  const productsItem = useSelector((state) => state.order.products);
   const [productsList, setProductsList] = useState([]);
   const [modalStatus, setModalStatus] = useState(false);
   const [modalData, setModalData] = useState({});
@@ -85,7 +88,13 @@ export default function Saloon(props) {
   useEffect(() => {
     async function readyOrders() {
       const data = await api.getOrders();
-      setProducts(data.filter(({ status }) => status === "deliver"));
+      setProducts(
+        data ? (
+          data.filter(({ status }) => status === "deliver")
+        ) : (
+          <div>carregando...</div>
+        )
+      );
     }
     readyOrders();
   }, []);
@@ -98,6 +107,28 @@ export default function Saloon(props) {
 
     products();
   }, []);
+
+  const sendOrder = async () => {
+    if (client === "" || table === "") {
+      alert("preencha o nome do cliente e a mesa");
+    } else {
+      const body = {
+        client,
+        table,
+        products: productsItem.map((item) => ({
+          id: Number(item.id),
+          qtd: item.qt,
+        })),
+      };
+      const data = await api.postOrders(body);
+      console.log(data);
+      alert("pedido enviado para cozinha");
+
+      window.location.href = "/hall";
+
+      return data;
+    }
+  };
 
   const handleProductClick = (data) => {
     setModalData(data);
@@ -114,7 +145,13 @@ export default function Saloon(props) {
 
   return (
     <Container>
-      <Header />
+      <Header>
+        <IconButton aria-label="waiter">
+          <StyledBadge badgeContent={products.length} color="secondary">
+            <MenuItem icon="/assets/waiter.png" link="/orders" />
+          </StyledBadge>
+        </IconButton>
+      </Header>
 
       <Label>Categorias:</Label>
       <Select
@@ -144,6 +181,13 @@ export default function Saloon(props) {
           onChange={onChangeTable}
           value={table}
         />
+        <ProducSend
+          onClick={() => {
+            sendOrder();
+          }}
+        >
+          Enviar Pedido
+        </ProducSend>
       </ContainerInput>
 
       <ProductArea>
@@ -155,13 +199,7 @@ export default function Saloon(props) {
       <Modal status={modalStatus} setStatus={setModalStatus}>
         <ModalProduct data={modalData} setStatus={setModalStatus} />
       </Modal>
-      <OrderReady>
-        <IconButton aria-label="waiter">
-          <StyledBadge badgeContent={products.length} color="secondary">
-            <MenuItem icon="/assets/waiter.png" link="/orders" />
-          </StyledBadge>
-        </IconButton>
-      </OrderReady>
+
       <Order client={client} table={table} />
     </Container>
   );

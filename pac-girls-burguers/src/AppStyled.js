@@ -6,15 +6,6 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const Menu = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #136713;
-  width: 80px;
-`;
-
 export const PageBody = styled.div`
   display: flex;
   align-items: flex-start;

@@ -71,7 +71,7 @@ export const ProductQtText = styled.div`
   margin: 0px 5px;
 `;
 export const ProducSend = styled.div`
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   border: 0;

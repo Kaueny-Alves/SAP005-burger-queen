@@ -1,37 +1,44 @@
 import axios from "axios";
+const apiUrl = axios.create({ baseURL: "https://lab-api-bq.herokuapp.com"});
 
-let baseUrl = "https://lab-api-bq.herokuapp.com";
 
-export default {
+export const api = {
   register: async (body) => {
     try {
-      const response = await axios.post(`${baseUrl}/users`, body);
-      return response.data;
+      const response = await apiUrl.post(`/users`, body);
+
+      return response;
     } catch (error) {
-      console.log(error);
-      return error;
+      window.alert(error.response.data.message)
+      return error.response.data;
     }
   },
 
   login: async (body) => {
     try {
-      const response = await axios.post(`${baseUrl}/auth`, body);
+      const response = await apiUrl.post(`/auth`, body);
       return response.data;
     } catch (error) {
-      console.log(error);
+      window.alert(error.response.data.message);
       return error.response;
     }
   },
 
   getProducts: async () => {
-    const token = localStorage.getItem("token");
+    try {
+      const token = localStorage.getItem("token");
     const axiosConfig = {
       headers: {
         Authorization: token,
       },
     };
-    const response = await axios.get(`${baseUrl}/products`, axiosConfig);
+    const response = await apiUrl.get(`/products`, axiosConfig);
     return response.data;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+    
   },
 
   postOrders: async (body) => {
@@ -42,7 +49,7 @@ export default {
           Authorization: token,
         },
       };
-      const response = await axios.post(`${baseUrl}/orders`, body, axiosConfig);
+      const response = await apiUrl.post(`/orders`, body, axiosConfig);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -58,10 +65,11 @@ export default {
           Authorization: token,
         },
       };
-      const response = await axios.get(`${baseUrl}/orders`, axiosConfig);
+      const response = await apiUrl.get(`/orders`, axiosConfig);
       return response.data;
     } catch (error) {
       console.log(error);
+      return error.response;
     }
   },
 
@@ -73,13 +81,14 @@ export default {
           Authorization: token,
         },
       };
-      const response = await axios.get(
-        `${baseUrl}/orders/${orderId}`,
+      const response = await apiUrl.get(
+        `/orders/${orderId}`,
         axiosConfig
       );
       return response.data;
     } catch (error) {
       console.log(error);
+      return error.response;
     }
   },
 
@@ -92,15 +101,15 @@ export default {
     };
 
     try {
-      const response = await axios.put(
-        `${baseUrl}/orders/${orderId}`,
+      const response = await apiUrl.put(
+        `/orders/${orderId}`,
         body,
         axiosConfig
       );
       return response.data;
     } catch (error) {
       console.log(error.response.data.message);
-      return error.response.data;
+      return error.response;
     }
   },
 
@@ -112,13 +121,14 @@ export default {
           Authorization: token,
         },
       };
-      const response = await axios.delete(
-        `${baseUrl}/orders/${orderId}`,
+      const response = await apiUrl.delete(
+        `/orders/${orderId}`,
         axiosConfig
       );
       return response.data;
     } catch (error) {
       console.log(error);
+      return error.response;
     }
   },
 };
