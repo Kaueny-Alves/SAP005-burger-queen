@@ -38,6 +38,10 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 ## O que funciona
 
+  (\__/)
+- ( ͡ ⚫͜ ʖ͡⚫
+  \ 👉  \ 👉
+
 - Login
 - Cadastro
 - Usuário é redirecionado para a tela respectiva ao seu cadastro
