@@ -38,8 +38,8 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 ## O que funciona
 
-  (\__/)
-       ( ͡ ⚫͜ ʖ͡⚫
+  (\__/) </br>
+       ( ͡ ⚫͜ ʖ͡⚫</br>
         \ 👉    \  👉
 
 - Login
